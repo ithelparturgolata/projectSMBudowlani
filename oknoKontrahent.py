@@ -80,7 +80,7 @@ def sendSMS():
     try:
         result = ent7.get("1.0", "end")
         ent8.info = str(ent8.get())
-        token = "rM5DsJlOvDkbGnYnHAn9f9GmpphT0ovOywqPaiLL"
+        token = ""
         client = SmsApiPlClient(access_token=token)
         send_results = client.sms.send(to=ent8.info, message=result, from_="ZIELONEARKADY")
         for result in send_results:

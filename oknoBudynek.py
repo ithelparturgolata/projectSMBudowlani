@@ -13,6 +13,7 @@ from tkinter import messagebox
 from smsapi.client import SmsApiPlClient
 from smsapi.exception import SmsApiException
 import os
+from db import *
 
 # połączenie z MySQL
 mydb = mysql.connector.connect(host="localhost",
@@ -110,7 +111,7 @@ def sendSMS():
     try:
         result = ent7.get("1.0", "end")
         ent8.info = str(ent8.get())
-        token = "rM5DsJlOvDkbGnYnHAn9f9GmpphT0ovOywqPaiLL"
+        token = ""
         client = SmsApiPlClient(access_token=token)
         send_results = client.sms.send(to=ent8.info,
                                        message=result,
